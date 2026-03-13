@@ -1,7 +1,10 @@
 ﻿# Codex Profiles
 
+ 
+
 <p align="center">
-  <img src="assets/banner-reference.png" alt="Codex Profiles banner" width="100%" />
+  
+  
 </p>
 
 <p align="center">
