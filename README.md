@@ -1,7 +1,7 @@
-# codex-profiles
+# Codex Profiles
 
 <p align="center">
-  <img src="assets/banner.svg" alt="codex-profiles banner" width="100%" />
+  <img src="assets/banner.svg" alt="Codex Profiles banner" width="100%" />
 </p>
 
 <p align="center">
@@ -15,7 +15,7 @@ Windows helpers for running multiple isolated Codex desktop profiles in parallel
 
 ## About
 
-`codex-profiles` is a Windows-focused helper toolkit for people who want multiple Codex desktop identities at the same time without breaking a separate Codex CLI setup.
+`Codex Profiles` is a Windows-focused helper toolkit for people who want multiple Codex desktop identities at the same time without breaking a separate Codex CLI setup.
 
 It is built for setups where you want things like:
 
@@ -56,6 +56,27 @@ By default, profiles live under:
 
 - profile home: `%LOCALAPPDATA%\\CodexProfiles\\<profile>`
 - UI data: `%LOCALAPPDATA%\\CodexParallelDesktop\\ui\\<profile>`
+
+## Requirements and limits
+
+This repo is designed for the same setup used in testing:
+
+- Windows with the Codex desktop app installed from the Microsoft Store
+- PowerShell 5.1 or newer
+- Node.js only if you want to use `-EnableCommonMcp`
+
+What should work reliably:
+
+- multiple cloned Codex desktop profiles in parallel
+- isolated desktop `CODEX_HOME` and isolated Chromium `--user-data-dir`
+- desktop launchers that ignore inherited `OPENAI_BASE_URL` / proxy env vars
+- keeping the normal Codex CLI home separate from the desktop profiles
+
+What is still environment-dependent:
+
+- future Codex desktop app updates could change internal behavior
+- some MCP OAuth credentials may still be stored in the Windows credential store
+- launching the normal Store app icon directly bypasses these isolated launchers
 
 ## Important caveats
 
