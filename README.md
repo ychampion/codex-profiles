@@ -1,7 +1,7 @@
-# Codex Profiles
+﻿# Codex Profiles
 
 <p align="center">
-  <img src="assets/banner-flat-v3.svg" alt="Codex Profiles banner" width="100%" />
+  <img src="assets/banner-reference.png" alt="Codex Profiles banner" width="100%" />
 </p>
 
 <p align="center">
@@ -191,3 +191,4 @@ The launchers are designed to avoid inherited desktop proxy settings such as:
 - `CODEX_THREAD_ID`
 
 That is important when your CLI or shell uses a custom local endpoint but you want the desktop profiles to sign in with ChatGPT normally.
+
