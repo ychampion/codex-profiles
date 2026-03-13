@@ -1,7 +1,7 @@
 # Codex Profiles
 
 <p align="center">
-  <img src="assets/banner-rounded-v2.svg" alt="Codex Profiles banner" width="100%" />
+  <img src="assets/banner-flat-v3.svg" alt="Codex Profiles banner" width="100%" />
 </p>
 
 <p align="center">
