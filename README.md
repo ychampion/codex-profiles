@@ -2,6 +2,17 @@
 
 Windows helpers for running multiple isolated Codex desktop profiles in parallel without touching your Codex CLI home.
 
+## About
+
+`codex-profiles` is a Windows-focused helper toolkit for people who want multiple Codex desktop identities at the same time without breaking a separate Codex CLI setup.
+
+It is built for setups where you want things like:
+
+- one desktop profile per account or workspace
+- parallel Codex windows with isolated local state
+- desktop auth separated from a CLI that uses a custom endpoint
+- optional MCP defaults for new desktop profiles
+
 ## What this solves
 
 The Microsoft Store Codex desktop app behaves like a single-instance Electron app. Launching the Store app directly does **not** give you true parallel profile isolation.
