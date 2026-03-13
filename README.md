@@ -1,5 +1,16 @@
 # codex-profiles
 
+<p align="center">
+  <img src="assets/banner.svg" alt="codex-profiles banner" width="100%" />
+</p>
+
+<p align="center">
+  <img alt="Windows" src="https://img.shields.io/badge/platform-Windows_11+-0F172A?style=for-the-badge&logo=windows&logoColor=white">
+  <img alt="PowerShell" src="https://img.shields.io/badge/Powershell-5.1%2B-5391FE?style=for-the-badge&logo=powershell&logoColor=white">
+  <img alt="Codex Desktop" src="https://img.shields.io/badge/Codex-Desktop_Profiles-111827?style=for-the-badge&logo=openai&logoColor=white">
+  <img alt="CLI Safe" src="https://img.shields.io/badge/CLI-Safe-16A34A?style=for-the-badge">
+</p>
+
 Windows helpers for running multiple isolated Codex desktop profiles in parallel without touching your Codex CLI home.
 
 ## About
@@ -12,6 +23,10 @@ It is built for setups where you want things like:
 - parallel Codex windows with isolated local state
 - desktop auth separated from a CLI that uses a custom endpoint
 - optional MCP defaults for new desktop profiles
+
+## Visual overview
+
+![Isolation overview](assets/isolation-overview.svg)
 
 ## What this solves
 
