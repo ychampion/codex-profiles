@@ -130,6 +130,40 @@ You can append `-WhatIf` to the public scripts or module functions for a dry run
 
 The MCP block is created only when a new profile config is written, or when you pass `-OverwriteConfig`.
 
+## Troubleshooting
+
+### Microsoft Store app updates
+
+If the Codex desktop app updates through the Microsoft Store, the installed app version can change while your older cloned binaries stay on disk.
+
+In that case, rerun a launcher with `-ForceRefreshClone` to rebuild the clone from the latest Store version:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\windows\Start-CodexDesktopProfile.ps1 -ProfileName alpha -ForceRefreshClone
+```
+
+You can also refresh all provisioned profiles in one pass:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\windows\Install-CodexDesktopProfiles.ps1 -ProfileName alpha,bloom,apex,prime,flow,turbo,sonic,nova -ForceRefreshClone
+```
+
+This refreshes the cloned app binaries. Your isolated profile data still lives in the profile home and UI data folders, so it should not reset your desktop profiles by itself.
+
+### MCP auth and OAuth prompts
+
+Profile-local config is isolated, but some MCP authentication flows can still involve the Windows credential store.
+
+That means file-based profile state is separate, while some MCP credentials may be reused or re-prompted depending on the provider.
+
+If an MCP server shows the wrong account, keeps prompting, or behaves differently across profiles:
+
+- reconnect that MCP server from the profile you actually want to use
+- if needed, remove the matching Codex or provider-specific entry from Windows Credential Manager and sign in again from the target profile
+- expect some providers to reuse OS-level credentials, even when `CODEX_HOME` is isolated
+
+For that reason, local profile separation is strongest for desktop auth, config, sessions, and UI data. MCP OAuth behavior can still vary by provider.
+
 ## Recommended naming set
 
 The default profile set used by the installer is:
